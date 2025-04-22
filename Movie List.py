@@ -50,5 +50,5 @@ movies=movies[movies['Genre']==genre]
 print(movies)
 movies=movies[movies['Score']==score]
 print(movies)
-movies=movies[int(movies['Year'])>=int(age)]
+movies=movies[movies['Year']>=int(age)]
 print(movies)
