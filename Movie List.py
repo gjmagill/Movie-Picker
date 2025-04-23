@@ -44,11 +44,11 @@ print(movies.head())
 while(True):
     genre = input("what Genre do you want to watch?: ")
     score = input("what is the lowest score you'll watch?: ")
-    age = input("What's the oldest movie you'll watch?: ")
+    age = int(input("What's the oldest movie you'll watch?: "))
     break
 movies=movies[movies['Genre']==genre]
 print(movies)
 movies=movies[movies['Score']==score]
 print(movies)
-movies=movies[movies['Year']>=int(age)]
+movies=movies[movies['Year']>=age]
 print(movies)
