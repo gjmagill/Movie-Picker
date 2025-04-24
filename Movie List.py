@@ -26,7 +26,7 @@ with open('Movies.csv', 'a', newline='') as csvfile:
     fieldnames = ['Title','Year','Genre','Score']
     f = csv.DictWriter(csvfile,fieldnames)
     while(True):
-        inp = input("enter a Movie in form title, year, genre, score or enter END if you want to end: ")
+        inp = input("enter a Movie in form title,year,genre,score or enter END if you want to end: ")
         if(inp=='END'):
             break
         try:
@@ -38,10 +38,14 @@ with open('Movies.csv', 'a', newline='') as csvfile:
             print("ERROR INVALID FORM: please input in correct form!!! >:(")
 
 movies= pd.read_csv('Movies.csv')
-
-genre = input("what Genre do you want to watch?: ")
-score = float(input("what is the lowest score you'll watch?: "))
-age = int(input("What's the oldest movie you'll watch?: "))
+while True:
+    try:
+        genre = input("what Genre do you want to watch?: ")
+        score = float(input("what is the lowest score you'll watch?: "))
+        age = int(input("What's the oldest movie you'll watch?: "))
+        break
+    except ValueError:
+        print("ERROR Invalid type, please try again")
 
 
 movies=movies[movies['Genre']==genre]
