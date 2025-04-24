@@ -38,17 +38,16 @@ with open('Movies.csv', 'a', newline='') as csvfile:
             print("ERROR INVALID FORM: please input in correct form!!! >:(")
 
 movies= pd.read_csv('Movies.csv')
-print(movies.head())
 
+genre = input("what Genre do you want to watch?: ")
+score = input("what is the lowest score you'll watch?: ")
+age = input("What's the oldest movie you'll watch?: ")
 
-while(True):
-    genre = input("what Genre do you want to watch?: ")
-    score = input("what is the lowest score you'll watch?: ")
-    age = input("What's the oldest movie you'll watch?: ")
-    break
 movies=movies[movies['Genre']==genre]
-print(movies)
 movies=movies[movies['Score']==score]
-print(movies)
 movies=movies[movies['Year']>=int(age)]
-print(movies)
+if(len(movies)>0):
+    print("Movies we found fit!")
+    print(movies)
+else:
+    print("Uh Oh we didn't find anything")
