@@ -4,7 +4,8 @@ Libraries to Add:
 - pandas.
 - csv.
 You must download Movie List.py.
-You must download Movies.csv.  
+You must download Movies.csv.
+
 The code will first ask for any movies to add.
 You must enter in form of title,year,genre,score - capitalize the first letter
 then ask what type of movies to watch.
