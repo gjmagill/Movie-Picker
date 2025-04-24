@@ -33,11 +33,15 @@ with open('Movies.csv', 'a', newline='') as csvfile:
             movie = inp.split(',')
             new_movie = Movie(movie[0], movie[1], movie[2], movie[3])
             movie =new_movie.__str__().split(',')
-            f.writerow({'Title':movie[0],'Year':int(movie[1]),'Genre':movie[2],'Score':float(movie[3])})
+            try:
+                f.writerow({'Title':movie[0],'Year':int(movie[1]),'Genre':movie[2],'Score':float(movie[3])})
+            except ValueError:
+                print("ERROR INVALID FORM: please input in correct form!!! >:(")
         except IndexError:
             print("ERROR INVALID FORM: please input in correct form!!! >:(")
 
 movies= pd.read_csv('Movies.csv')
+print(movies)
 while True:
     try:
         genre = input("what Genre do you want to watch?: ")
