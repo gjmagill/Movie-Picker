@@ -41,7 +41,6 @@ with open('Movies.csv', 'a', newline='') as csvfile:
             print("ERROR INVALID FORM: please input in correct form!!! >:(")
 
 movies= pd.read_csv('Movies.csv')
-print(movies)
 while True:
     try:
         genre = input("what Genre do you want to watch?: ")
