@@ -40,12 +40,12 @@ with open('Movies.csv', 'a', newline='') as csvfile:
 movies= pd.read_csv('Movies.csv')
 
 genre = input("what Genre do you want to watch?: ")
-score = input("what is the lowest score you'll watch?: ")
-age = input("What's the oldest movie you'll watch?: ")
+score = int(input("what is the lowest score you'll watch?: "))
+age = int(input("What's the oldest movie you'll watch?: "))
 
 movies=movies[movies['Genre']==genre]
-movies=movies[movies['Score']==score]
-movies=movies[movies['Year']>=int(age)]
+movies=movies[movies['Score']>=score]
+movies=movies[movies['Year']>=age]
 if(len(movies)>0):
     print("Movies we found fit!")
     print(movies)
