@@ -26,7 +26,7 @@ with open('Movies.csv', 'a', newline='') as csvfile:
     fieldnames = ['Title','Year','Genre','Score']
     f = csv.DictWriter(csvfile,fieldnames)
     while(True):
-        inp = input("enter a Movie in form title,year,genre,score or enter END if you want to end: ")
+        inp = input("enter a Movie in form title,year,genre,score(1-10) or enter END if you want to end: ")
         if(inp=='END'):
             break
         try:
